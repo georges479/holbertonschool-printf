@@ -1,0 +1,44 @@
+#include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
+
+
+/**
+ *
+ *
+ *
+ *
+ *
+ */
+int _printf(const char *format, ...)
+{
+        va_list character;
+        int result, acc;
+
+        va_start(character, format);
+
+        acc = 0;
+        for (result = 0; format[result] != '\0'; result++)
+        {
+                {
+                        acc += va_arg(character, int);
+                        if (format[result] == '%')
+                        {
+                                putchar('%');
+                                putchar('\n');
+                        }
+                        else if (format[result] == 's')
+                        {
+                                putchar('c');
+                                putchar('\n');
+                        }
+                        else if (format[result] == 'c')
+                        {
+                                putchar('c');
+                                putchar('\n');
+                        }
+                }
+        }
+                va_end(character);
+                return (acc);
+}
