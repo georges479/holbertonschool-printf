@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 /**
  *
@@ -13,30 +13,50 @@
 int _printf(const char *format, ...)
 {
 	va_list box;
-	int i, j;
-	char *car;
+	int i, j, k;
+	char *s;
+
+	if (format == NULL)
+	{
+		return(-1);
+	}
 
 	va_start(box, format);
 	j = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		j += va_arg(box, int);
 		if (format[i] != '%')
 		{
 			putchar(format[i]);
-			i++;
+			j++;
 		}
 		if (format[i] == '%' && format[i + 1] == 'c')
 		{
-			putchar(format[i]);
+			putchar(va_arg(box, int));
+			j++;
+			i++;
 		}
 		else if (format[i] == '%' && format[i + 1] == 's')
 		{
-			car = va_arg(box, char);
-			putchar(car[i]);
+			s = va_arg(box, char*);
+			if (s == NULL)
+			{
+				s = "(null)";
+			}
+			for (k = 0; s[k] != '\0'; k++)
+			{
+				putchar(s[k]);
+				j++;
+			}
+			i++;
+		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			putchar('%');
+			j++;
+			i++;
 		}
 	}
 	va_end(box);
-	return(j);
+	return (j);
 }
-
