@@ -4,11 +4,10 @@
 #include <string.h>
 
 /**
+ * _printf - A simplified version of printf that handles %c, %s, and %%
+ * @format: The format string
  *
- *
- *
- *
- *
+ * Return: The number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
 {
@@ -18,9 +17,8 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
-
 	va_start(box, format);
 	j = 0;
 	for (i = 0; format[i] != '\0'; i++)
