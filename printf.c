@@ -1,12 +1,10 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <string.h>
 
 /**
  * _printf - A simplified version of printf that handles %c, %s, and %%
  * @format: The format string
- *
  * Return: The number of characters printed (excluding the null byte)
  */
 int _printf(const char *format, ...)
