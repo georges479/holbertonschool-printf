@@ -1,0 +1,20 @@
+_PRINTF(3) Manuel des fonctions de la bibliothèque _PRINTF(3)
+NOM
+_printf - conversion de sortie formatée
+SYNOPSIS
+#include <stdarg.h>
+int _printf(const char *format, ...);
+DESCRIPTION
+La fonction _printf() produit une sortie formatée sur stdout, le flux de sortie standard. La chaîne de format est composée de caractères ordinaires (copiés tels quels dans la sortie) et de spécifications de conversion introduites par le caractère %. Chaque spécification de conversion correspond à un argument suivant et est remplacée par sa valeur formatée. Les spécifications de conversion disponibles sont : %c Affiche un caractère. L’argument doit être de type int et sera converti en unsigned char. %s Affiche une chaîne. L’argument doit être un pointeur vers une chaîne de caractères (const char*). %d, %i Affiche un entier en notation décimale signée. L’argument doit être de type int. %% Affiche un caractère %.
+VALEUR DE RETOUR
+En cas de retour réussi, ces fonctions renvoient le nombre de caractères imprimés (à l’exclusion de l’octet nul utilisé pour terminer la sortie des chaînes). Si une erreur de sortie est rencontrée, une valeur négative est renvoyée.
+EXEMPLES
+L’appel _printf(“Ceci est un nombre : %d\n”, 42); produira la sortie « Ceci est un nombre : 42 »
+VOIR AUSSI
+printf(3), sprintf(3), snprintf(3)
+BOGUES
+La fonction _printf ne gère pas tous les spécificateurs
+AUTEUR
+Nils
+George
+Nordine
