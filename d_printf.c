@@ -7,7 +7,7 @@
  * @format: The format string
  * Return: The number of characters printed (excluding the null byte)
  */
-int d_printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
         va_list box;
         int i, j, c, count, afficheur;
