@@ -145,7 +145,7 @@ Georges Menheim
 
 ## Flowchart
 
-
+https://files.slack.com/files-pri/T0423U1MW21-F0838F8DB33/capture_d___e__cran_2024-11-28_a___13.18.39.png
 https://discordapp.com/channels/1311968930050474034/1311968930050474037/1311968953312215142
 
 
