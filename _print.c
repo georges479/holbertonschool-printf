@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 				count += print_num(va_arg(args, int));
 			else
 			{
+				_putchar('%');
 				count += _putchar(format[i]);
 			}
 		}
