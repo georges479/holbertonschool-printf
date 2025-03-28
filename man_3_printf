@@ -1,0 +1,33 @@
+.TH _PRINTF
+"March 2025" "Version 1.0" "Manual Page"
+
+.SH NAME
+_printf \- Print a caracter or integer
+
+.SH DESCRIPTION
+The \fB_printf\fR function produces output according to a format string.  
+It works similarly to the standard \fBprintf(3)\fR function, but with custom implementation.  
+The format string determines how the arguments are displayed.  
+
+Supported format specifiers:  
+- %c : Prints a single character.  
+- %s : Prints a string.  
+- %d / %i : Prints an integer in decimal format.  
+- %% : Prints a percent sign.  
+
+The function returns the number of characters printed, excluding the null byte.
+
+Exemple:
+
+int num = 8;
+
+_printf("I have %d candy's.\n", num);
+
+Run the commande:
+@user/test$ ./_printf
+@user/test$ I have 8 candy's.
+@user/test$
+
+.SH AUTHOR
+
+Georges - Nils - Lentz
